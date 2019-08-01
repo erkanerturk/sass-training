@@ -1,0 +1,85 @@
+// Header
+.mainHeader {
+  background-color: $primaryDark;
+}
+
+// ## Header
+
+// Search Box
+.searchBox {
+  width: 100%;
+  min-height: 50vh;
+  background-image: linear-gradient(to right top, rgba($primaryColor, .6), rgba($secondaryColor, .9)), url(../img/searchBoxBg.jpg);
+  @include backgroundSize;
+  @include flexCenter(column);
+
+  h1 {
+    color: $white;
+    text-shadow: 0 .2rem 1rem #1d1d1d4a;
+  }
+
+  &__inputContainer {
+
+    @include tableSize {
+      min-width: 90%;
+    }
+
+    ;
+
+    position: relative;
+    @include flexCenter;
+    background-color: rgba($white, .1);
+    border-radius: .2rem;
+    min-width: 40%;
+
+    .searchInput {
+      flex: 1;
+      padding: 2rem 3rem 2rem 3rem;
+      border-radius: 30rem;
+      border: none;
+      transition: all .3s;
+
+      &:hover {
+        box-shadow: 0 1rem 5rem 0 #00000036;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover+.searchBtn {
+        opacity: 1;
+      }
+    }
+
+    .searchBtn {
+      transition: all .3s;
+      position: absolute;
+      right: 5rem;
+      background-color: inherit;
+      border: none;
+      color: green;
+      opacity: .3;
+    }
+  }
+
+  &__button {
+    @include primaryButton;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: darken($primaryColor, 5%);
+      transform: translateY(6%);
+      box-shadow: none !important;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// ## Search Box
